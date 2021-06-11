@@ -1,6 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import MenuItems from "./Menu/MenuItems";
+import MenuItemForm from "./Menu/MenuItemForm";
 
 class App extends React.Component {
   state = {
@@ -43,6 +44,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>React Restaurant Menu App</h1>
+        <MenuItemForm addItem={this.addItem} />
+        <MenuItems
+          menuItems={this.state.menuItems}
+          editItem={this.editItem}
+          deleteItem={this.deleteItem}
+        />
       </div>
     );
   }
